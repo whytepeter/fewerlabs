@@ -21,17 +21,6 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.fewerlabs.dev"
-        }
-      ],
-      "destination": "https://fewerlabs.dev/:path*",
-      "permanent": true
-    },
-    {
       "source": "/privacy",
       "destination": "https://games.fewerlabs.dev/privacy",
       "permanent": false

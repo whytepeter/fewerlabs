@@ -9,7 +9,7 @@ The Fewer Labs homepage: one static HTML page, no build step.
 - `robots.txt`, `sitemap.xml`, `site.webmanifest`: crawler and install files
 - `ads.txt`: the AdSense seller line (a placeholder comment until AdSense approves the account); it covers the subdomains too
 - `/privacy`, `/about`, `/contact`: redirect to the pages on games.fewerlabs.dev (see `vercel.json`)
-- `vercel.json`: cache headers and the `www` → apex redirect
+- `vercel.json`: cache headers and the policy-page redirects (the `www` ↔ apex redirect is set in Vercel's Domains settings, not here, so the two can't loop)
 
 ## Run locally
 
