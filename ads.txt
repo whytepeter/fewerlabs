@@ -1,3 +1,1 @@
-# ads.txt for fewerlabs.dev and its subdomains (games., deepdive., ripple.).
-# Once AdSense approves the account, replace this comment with the line AdSense gives you, e.g.
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-5062449177712476, DIRECT, f08c47fec0942fa0
