@@ -1,9 +1,50 @@
 {
   "headers": [
-    { "source": "/fonts/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/art/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] }
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/art/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
   ],
   "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.fewerlabs.dev" }], "destination": "https://fewerlabs.dev/:path*", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.fewerlabs.dev"
+        }
+      ],
+      "destination": "https://fewerlabs.dev/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "https://games.fewerlabs.dev/privacy",
+      "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "https://games.fewerlabs.dev/about",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "https://games.fewerlabs.dev/contact",
+      "permanent": false
+    }
   ]
 }

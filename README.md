@@ -7,6 +7,8 @@ The Fewer Labs homepage: one static HTML page, no build step.
 - `fonts/`: Geist and Geist Mono, self-hosted (SIL Open Font License, see `fonts/LICENSE-OFL.txt`)
 - `og.png`: the 1200×630 link-preview image
 - `robots.txt`, `sitemap.xml`, `site.webmanifest`: crawler and install files
+- `ads.txt`: the AdSense seller line (a placeholder comment until AdSense approves the account); it covers the subdomains too
+- `/privacy`, `/about`, `/contact`: redirect to the pages on games.fewerlabs.dev (see `vercel.json`)
 - `vercel.json`: cache headers and the `www` → apex redirect
 
 ## Run locally
