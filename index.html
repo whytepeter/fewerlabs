@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Fewer Labs: open-source tools and small games</title>
+  <meta name="description" content="Fewer Labs is a small studio making open-source developer tools (Docent, v-tour-guide, r-tour-guide, Edi) and quick games for phone and desktop (Draw Am, Deep Dive, Ripple)." />
+  <link rel="canonical" href="https://fewerlabs.dev/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08090c" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Fewer Labs" />
+  <meta property="og:url" content="https://fewerlabs.dev/" />
+  <meta property="og:title" content="Fewer Labs: open-source tools and small games" />
+  <meta property="og:description" content="Fewer things, made well. Open-source developer tools and quick games you can play on any phone or desktop." />
+  <meta property="og:image" content="https://fewerlabs.dev/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Fewer Labs logo with the line: Fewer things, made well." />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fewer Labs: open-source tools and small games" />
+  <meta name="twitter:description" content="Fewer things, made well. Open-source developer tools and quick games you can play on any phone or desktop." />
+  <meta name="twitter:image" content="https://fewerlabs.dev/og.png" />
+
+  <link rel="icon" href="/fewerlabs-mark.svg" type="image/svg+xml" />
+  <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fewerlabs.dev/#org",
+        "name": "Fewer Labs",
+        "url": "https://fewerlabs.dev/",
+        "logo": "https://fewerlabs.dev/icon-512.png",
+        "sameAs": ["https://github.com/whytepeter"]
+      },
+      { "@type": "WebSite", "@id": "https://fewerlabs.dev/#site", "url": "https://fewerlabs.dev/", "name": "Fewer Labs", "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "VideoGame", "name": "Draw Am", "url": "https://www.drawam.app", "description": "A multiplayer draw-and-guess game for friend groups.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "VideoGame", "name": "Deep Dive", "url": "https://deepdive.fewerlabs.dev", "description": "Dive a darkening trench with one button.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "VideoGame", "name": "Ripple", "url": "https://ripple.fewerlabs.dev", "description": "Tap ripples to push paper boats to their docks.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "SoftwareSourceCode", "name": "Docent", "codeRepository": "https://github.com/whytepeter/docent", "description": "Codebase tours drawn from the real code, with evidence for every claim.", "license": "https://opensource.org/licenses/MIT", "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "SoftwareSourceCode", "name": "v-tour-guide", "codeRepository": "https://github.com/whytepeter/v-tour-guide", "programmingLanguage": "TypeScript", "description": "Product tours and onboarding for Vue 3 and Nuxt apps.", "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "SoftwareSourceCode", "name": "r-tour-guide", "codeRepository": "https://github.com/whytepeter/r-tour-guide", "programmingLanguage": "TypeScript", "description": "Product tours and onboarding for React and Next.js apps.", "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "SoftwareSourceCode", "name": "Edi", "codeRepository": "https://github.com/whytepeter/edi", "description": "A desktop companion that talks, takes notes, and helps out on screen.", "publisher": { "@id": "https://fewerlabs.dev/#org" } }
+    ]
+  }
+  </script>
+  <!-- Content is visible by default; the fade-in only applies once this runs -->
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    @font-face { font-family: 'Geist'; src: url('/fonts/geist.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Geist Mono'; src: url('/fonts/geist-mono.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+    :root {
+      --bg: #08090c;
+      --shell: rgba(255, 255, 255, .03);
+      --core: #0f1116;
+      --hair: rgba(255, 255, 255, .07);
+      --hair-2: rgba(255, 255, 255, .12);
+      --text: #f2f4f8;
+      --muted: #8d95a5;
+      --faint: #7a8394;
+      --accent: #4d8dff;
+      --ease: cubic-bezier(.32, .72, 0, 1);
+      --sans: 'Geist', system-ui, -apple-system, sans-serif;
+      --mono: 'Geist Mono', ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); color-scheme: dark; scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text); font: 16px/1.6 var(--sans);
+      -webkit-font-smoothing: antialiased; overflow-x: hidden; min-height: 100dvh;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 12px; }
+    .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* Soft light behind the hero, fixed so it never repaints on scroll */
+    .glow {
+      position: fixed; inset: 0; pointer-events: none;
+      background: radial-gradient(60% 40% at 50% -5%, rgba(77, 141, 255, .14), transparent 70%);
+    }
+
+    /* Floating island nav */
+    nav {
+      position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 10;
+      display: flex; align-items: center; gap: 4px; padding: 6px 6px 6px 16px;
+      border-radius: 999px; background: rgba(15, 17, 22, .72); box-shadow: inset 0 0 0 1px var(--hair-2);
+      backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%);
+      width: max-content; max-width: calc(100% - 32px);
+    }
+    nav .logo img { height: 20px; width: auto; }
+    nav .links { display: flex; gap: 2px; margin-left: 20px; }
+    nav .links a { font-size: 14px; color: var(--muted); padding: 8px 12px; border-radius: 999px; transition: color .3s var(--ease), background .3s var(--ease); }
+    nav .links a:hover { color: var(--text); background: rgba(255, 255, 255, .06); }
+
+    /* Pill button with its icon in a nested circle */
+    .btn {
+      display: inline-flex; align-items: center; gap: 12px; padding: 6px 6px 6px 20px;
+      border-radius: 999px; font-size: 15px; font-weight: 500; white-space: nowrap;
+      transition: transform .5s var(--ease), background .5s var(--ease);
+    }
+    .btn:active { transform: scale(.98); }
+    .btn i { width: 32px; height: 32px; border-radius: 999px; display: grid; place-items: center; transition: transform .5s var(--ease); }
+    .btn i svg { width: 14px; height: 14px; }
+    .btn:hover i { transform: translate(2px, -1px) scale(1.05); }
+    .btn-primary { background: var(--text); color: var(--bg); }
+    .btn-primary i { background: var(--bg); color: var(--text); }
+    .btn-ghost { box-shadow: inset 0 0 0 1px var(--hair-2); color: var(--text); }
+    .btn-ghost i { background: rgba(255, 255, 255, .08); }
+    .btn-ghost:hover { background: rgba(255, 255, 255, .04); }
+    nav .btn { font-size: 14px; padding: 4px 4px 4px 14px; gap: 8px; margin-left: 8px; }
+    nav .btn i { width: 28px; height: 28px; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 10px; border-radius: 999px;
+      font: 11px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+      box-shadow: inset 0 0 0 1px var(--hair-2); background: var(--shell);
+    }
+    .eyebrow b { width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
+
+    /* Hero */
+    .hero { padding: 180px 0 120px; }
+    .hero h1 {
+      margin-top: 28px; font-weight: 500; letter-spacing: -.045em; line-height: .98;
+      font-size: clamp(48px, 9vw, 112px); max-width: 11ch;
+    }
+    .hero h1 span { color: var(--faint); }
+    .hero p { margin-top: 28px; font-size: clamp(17px, 2vw, 19px); font-weight: 300; color: var(--muted); max-width: 44ch; }
+    .hero .cta { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    section { padding: 64px 0 96px; }
+    .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .sec-head h2 { margin-top: 16px; font-size: clamp(28px, 4vw, 44px); font-weight: 500; letter-spacing: -.035em; line-height: 1.05; }
+    .sec-head .more { font-size: 14px; color: var(--muted); transition: color .3s var(--ease); }
+    .sec-head .more:hover { color: var(--text); }
+
+    /* Bento grid of nested cards: a hairline shell holding an inner core */
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card {
+      display: block; padding: 6px; border-radius: 28px; background: var(--shell); box-shadow: inset 0 0 0 1px var(--hair);
+      transition: transform .7s var(--ease), box-shadow .7s var(--ease);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: inset 0 0 0 1px var(--hair-2); }
+    .core {
+      height: 100%; border-radius: 22px; background: var(--core); overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06); display: flex; flex-direction: column;
+    }
+    .art { position: relative; overflow: hidden; aspect-ratio: 16 / 9; }
+    .art img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+    .card:hover .art img { transform: scale(1.04); }
+    .meta { padding: 20px 22px 22px; display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-top: auto; }
+    .meta h3 { font-size: 20px; font-weight: 500; letter-spacing: -.02em; }
+    .meta p { margin-top: 4px; font-size: 15px; font-weight: 300; color: var(--muted); }
+    .meta .go {
+      flex: none; width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center;
+      background: rgba(255, 255, 255, .06); transition: transform .5s var(--ease), background .5s var(--ease);
+    }
+    .meta .go svg { width: 14px; height: 14px; }
+    .card:hover .go { transform: translate(2px, -2px); background: var(--text); color: var(--bg); }
+    .url { font: 12px/1 var(--mono); color: var(--faint); margin-top: 12px; }
+
+    .span-8 { grid-column: span 8; grid-row: span 2; }
+    .span-8 .art { aspect-ratio: auto; flex: 1; min-height: 320px; }
+    .span-4 { grid-column: span 4; }
+
+
+    /* Tool cards: text-first, with a small mono label */
+    .tool .core { padding: 28px; min-height: 240px; justify-content: space-between; }
+    .tool .meta { padding: 0; }
+    .tool .label { display: flex; align-items: center; gap: 10px; font: 12px/1 var(--mono); color: var(--faint); letter-spacing: .04em; }
+    .tool .status { padding: 4px 9px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--hair-2); color: var(--muted); }
+    .tool .status.live { color: #7fe0a8; box-shadow: inset 0 0 0 1px rgba(127, 224, 168, .25); }
+    .tool .line { font-size: clamp(22px, 2.6vw, 30px); font-weight: 400; letter-spacing: -.03em; line-height: 1.2; max-width: 26ch; margin: 28px 0; }
+    .tool .line.small { font-size: 20px; color: var(--muted); }
+    .tool.feature { grid-row: span 2; }
+    .span-12 { grid-column: 1 / -1; }
+    .tool.wide .core { min-height: 0; gap: 24px; }
+
+    footer { padding: 64px 0 48px; border-top: 1px solid var(--hair); }
+    footer .row { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    footer img { height: 20px; width: auto; }
+    footer .links { display: flex; gap: 24px; font-size: 14px; color: var(--muted); }
+    footer .links a:hover { color: var(--text); }
+    footer small { display: block; margin-top: 32px; font: 12px/1 var(--mono); color: var(--faint); }
+
+    /* Entry animation: fade up as each block scrolls in */
+    .js .reveal { opacity: 0; transform: translateY(28px); filter: blur(6px); transition: opacity 1s var(--ease), transform 1s var(--ease), filter 1s var(--ease); }
+    .js .reveal.in { opacity: 1; transform: none; filter: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
+
+    @media (max-width: 860px) {
+      nav .links { display: none; }
+      .hero { padding: 140px 0 80px; }
+      .bento { grid-template-columns: 1fr; gap: 12px; }
+      .span-8, .span-4, .span-12, .tool.feature { grid-column: auto; grid-row: auto; }
+      .span-8 .art { min-height: 0; aspect-ratio: 16 / 9; flex: none; }
+      .sec-head { flex-direction: column; align-items: start; gap: 12px; }
+      section { padding: 40px 0 64px; }
+    }
+    @media (max-width: 480px) { .wrap { padding: 0 16px; } }
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+      .card, .card:hover, .art img, .card:hover .art img { transition: none; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <nav aria-label="Main">
+    <a class="logo" href="/" aria-label="Fewer Labs home"><img src="/fewerlabs-logo-dark.svg" alt="Fewer Labs" width="86" height="20" /></a>
+    <div class="links"><a href="#games">Games</a><a href="#tools">Tools</a></div>
+    <a class="btn btn-ghost" href="https://github.com/whytepeter" target="_blank" rel="noopener">GitHub<i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></i></a>
+  </nav>
+
+  <main class="wrap">
+    <header class="hero">
+      <div class="eyebrow reveal"><b></b>Independent studio</div>
+      <h1 class="reveal d1">Fewer things, <span>made well.</span></h1>
+      <p class="reveal d2">Fewer Labs makes open-source tools for developers and quick games you can play on any phone or desktop.</p>
+      <div class="cta reveal d3">
+        <a class="btn btn-primary" href="https://games.fewerlabs.dev" target="_blank" rel="noopener">Play the games<i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></i></a>
+        <a class="btn btn-ghost" href="#tools">See the tools<i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M4 9l4 4 4-4"/></svg></i></a>
+      </div>
+    </header>
+
+    <section id="games" aria-labelledby="games-h">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow"><b></b>Games</div><h2 id="games-h">One-thumb games,<br />no install.</h2></div>
+        <a class="more" href="https://games.fewerlabs.dev" target="_blank" rel="noopener">games.fewerlabs.dev →</a>
+      </div>
+      <div class="bento">
+        <a class="card span-8 reveal" href="https://www.drawam.app" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="art"><img src="/art/draw-am.webp" width="1920" height="1080" decoding="async" alt="Draw Am: friends drawing and guessing" loading="lazy" /></div>
+            <div class="meta"><div><h3>Draw Am</h3><p>Draw and guess with your guys.</p><div class="url">drawam.app</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card span-4 reveal d1" href="https://deepdive.fewerlabs.dev" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="art"><img src="/art/deep-dive.webp" width="1920" height="1080" decoding="async" alt="Deep Dive: a diver descending a dark ocean trench" loading="lazy" /></div>
+            <div class="meta"><div><h3>Deep Dive</h3><p>Dive a darkening trench with one button.</p><div class="url">deepdive.fewerlabs.dev</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card span-4 reveal d2" href="https://ripple.fewerlabs.dev" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="art"><img src="/art/ripple.webp" width="1920" height="1080" decoding="async" alt="Ripple: paper boats on a pond" loading="lazy" /></div>
+            <div class="meta"><div><h3>Ripple</h3><p>Tap ripples to push boats home.</p><div class="url">ripple.fewerlabs.dev</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="tools" aria-labelledby="tools-h">
+      <div class="sec-head reveal">
+        <div><div class="eyebrow"><b></b>Open source</div><h2 id="tools-h">Tools we wanted,<br />so we built them.</h2></div>
+        <a class="more" href="https://github.com/whytepeter" target="_blank" rel="noopener">github.com/whytepeter →</a>
+      </div>
+      <div class="bento">
+        <a class="card span-8 tool feature reveal" href="https://github.com/whytepeter/docent" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="label"><span>01 · Codebase tours</span><span class="status">MIT</span></div>
+            <p class="line">Pick a flow like "sign in" and Docent draws it from the real code, then walks you through it card by card. Every claim cites the file and lines it came from.</p>
+            <div class="meta"><div><h3>Docent</h3><div class="url">github.com/whytepeter/docent</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card span-4 tool reveal d1" href="https://github.com/whytepeter/v-tour-guide" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="label"><span>02 · Vue 3 · Nuxt</span><span class="status live">v1.2</span></div>
+            <p class="line small">Product tours and onboarding for Vue apps.</p>
+            <div class="meta"><div><h3>v-tour-guide</h3><div class="url">npm i v-tour-guide</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card span-4 tool reveal d2" href="https://github.com/whytepeter/r-tour-guide" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="label"><span>03 · React · Next.js</span><span class="status live">v1.0</span></div>
+            <p class="line small">Product tours and onboarding for React apps.</p>
+            <div class="meta"><div><h3>r-tour-guide</h3><div class="url">npm i r-tour-guide</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card span-12 tool wide reveal" href="https://github.com/whytepeter/edi" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="label"><span>04 · Desktop</span><span class="status live">Active</span></div>
+            <div class="meta"><div><h3>Edi</h3><p>A desktop companion that talks, takes notes, and helps out on screen.</p><div class="url">github.com/whytepeter/edi</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <img src="/fewerlabs-logo-dark.svg" alt="Fewer Labs" width="86" height="20" />
+        <div class="links"><a href="https://games.fewerlabs.dev" target="_blank" rel="noopener">Games</a><a href="#tools">Tools</a><a href="https://github.com/whytepeter" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+      <small>© 2026 Fewer Labs</small>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
