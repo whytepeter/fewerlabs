@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="google-adsense-account" content="ca-pub-5062449177712476" />
   <title>Fewer Labs: open-source tools and small games</title>
-  <meta name="description" content="Fewer Labs is a small studio making open-source developer tools (Docent, v-tour-guide, r-tour-guide, Edi) and quick games for phone and desktop (Draw Am, Deep Dive, Ripple)." />
+  <meta name="description" content="Fewer Labs is a small studio making open-source developer tools (Docent, v-tour-guide, r-tour-guide, Edi) and quick games for phone and desktop (Draw Am, Street Clash, Deep Dive, Ripple)." />
   <link rel="canonical" href="https://fewerlabs.dev/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#08090c" />
@@ -46,6 +46,7 @@
       },
       { "@type": "WebSite", "@id": "https://fewerlabs.dev/#site", "url": "https://fewerlabs.dev/", "name": "Fewer Labs", "publisher": { "@id": "https://fewerlabs.dev/#org" } },
       { "@type": "VideoGame", "name": "Draw Am", "url": "https://www.drawam.app", "description": "A multiplayer draw-and-guess game for friend groups.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
+      { "@type": "VideoGame", "name": "Street Clash", "url": "https://streetclash.fewerlabs.dev", "description": "Jetpack gunfights on Lagos streets and Bayelsa creeks.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
       { "@type": "VideoGame", "name": "Deep Dive", "url": "https://deepdive.fewerlabs.dev", "description": "Dive a darkening trench with one button.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
       { "@type": "VideoGame", "name": "Ripple", "url": "https://ripple.fewerlabs.dev", "description": "Tap ripples to push paper boats to their docks.", "gamePlatform": ["Web browser", "Mobile"], "publisher": { "@id": "https://fewerlabs.dev/#org" } },
       { "@type": "SoftwareSourceCode", "name": "Docent", "codeRepository": "https://github.com/whytepeter/docent", "description": "Codebase tours drawn from the real code, with evidence for every claim.", "license": "https://opensource.org/licenses/MIT", "publisher": { "@id": "https://fewerlabs.dev/#org" } },
@@ -173,6 +174,7 @@
     .span-8 { grid-column: span 8; grid-row: span 2; }
     .span-8 .art { aspect-ratio: auto; flex: 1; min-height: 320px; }
     .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
 
 
     /* Tool cards: text-first, with a small mono label */
@@ -203,7 +205,7 @@
       nav .links { display: none; }
       .hero { padding: 140px 0 80px; }
       .bento { grid-template-columns: 1fr; gap: 12px; }
-      .span-8, .span-4, .span-12, .tool.feature { grid-column: auto; grid-row: auto; }
+      .span-8, .span-6, .span-4, .span-12, .tool.feature { grid-column: auto; grid-row: auto; }
       .span-8 .art { min-height: 0; aspect-ratio: 16 / 9; flex: none; }
       .sec-head { flex-direction: column; align-items: start; gap: 12px; }
       section { padding: 40px 0 64px; }
@@ -241,19 +243,25 @@
         <a class="more" href="https://games.fewerlabs.dev" target="_blank" rel="noopener">games.fewerlabs.dev →</a>
       </div>
       <div class="bento">
-        <a class="card span-8 reveal" href="https://www.drawam.app" target="_blank" rel="noopener">
+        <a class="card span-6 reveal" href="https://www.drawam.app" target="_blank" rel="noopener">
           <div class="core">
             <div class="art"><img src="/art/draw-am.webp" width="1920" height="1080" decoding="async" alt="Draw Am: friends drawing and guessing" loading="lazy" /></div>
             <div class="meta"><div><h3>Draw Am</h3><p>Draw and guess with your guys.</p><div class="url">drawam.app</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
           </div>
         </a>
-        <a class="card span-4 reveal d1" href="https://deepdive.fewerlabs.dev" target="_blank" rel="noopener">
+        <a class="card span-6 reveal d1" href="https://streetclash.fewerlabs.dev" target="_blank" rel="noopener">
+          <div class="core">
+            <div class="art"><img src="/art/street-clash.webp" width="1920" height="1080" decoding="async" alt="Street Clash: two fighters trade shots across danfo buses under a Lagos flyover" loading="lazy" /></div>
+            <div class="meta"><div><h3>Street Clash</h3><p>Jetpack gunfights on Lagos streets.</p><div class="url">streetclash.fewerlabs.dev</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
+          </div>
+        </a>
+        <a class="card span-6 reveal d2" href="https://deepdive.fewerlabs.dev" target="_blank" rel="noopener">
           <div class="core">
             <div class="art"><img src="/art/deep-dive.webp" width="1920" height="1080" decoding="async" alt="Deep Dive: a diver descending a dark ocean trench" loading="lazy" /></div>
             <div class="meta"><div><h3>Deep Dive</h3><p>Dive a darkening trench with one button.</p><div class="url">deepdive.fewerlabs.dev</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
           </div>
         </a>
-        <a class="card span-4 reveal d2" href="https://ripple.fewerlabs.dev" target="_blank" rel="noopener">
+        <a class="card span-6 reveal d3" href="https://ripple.fewerlabs.dev" target="_blank" rel="noopener">
           <div class="core">
             <div class="art"><img src="/art/ripple.webp" width="1920" height="1080" decoding="async" alt="Ripple: paper boats on a pond" loading="lazy" /></div>
             <div class="meta"><div><h3>Ripple</h3><p>Tap ripples to push boats home.</p><div class="url">ripple.fewerlabs.dev</div></div><span class="go"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11 11 5M6 5h5v5"/></svg></span></div>
